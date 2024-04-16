@@ -1,0 +1,73 @@
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; // This will make it center vertically as well.
+    // background-color: #f7f7f7; // a soft background color
+    padding: 2rem; // add padding around the form
+  }
+  
+  .p-field {
+    margin-bottom: 1rem; // space out the fields
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  button {
+    border: 1px solid #ccc; // uniform border
+    border-radius: 0.5rem; // rounded corners
+    padding: 0.5rem; // padding inside inputs
+    width: 100%; // full width of the container
+  }
+  
+  button {
+    background-color: #007bff; // a nice blue
+    color: white; // text color
+    border: none; // remove the border
+    padding: 0.75rem 1.5rem; // larger padding for the button
+    font-size: 1.1rem; // slightly larger text
+    cursor: pointer; // cursor indicates it's clickable
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // subtle shadow
+  
+    &:hover {
+      background-color: #0056b3; // darker blue on hover
+    }
+  
+    &:disabled {
+      // background-color: #ccc; // grey out when disabled
+      cursor: not-allowed; // show that it's not clickable
+    }
+  }
+  
+  .p-fluid {
+    max-width: 500px; // prevents form from being too wide
+  }
+  .p-field label {
+    display: block;
+    margin-bottom: 0.5rem; // space between label and input
+    // color: #333; // readable text color
+    font-weight: bold; // make labels bold
+  }
+
+  input[type="text"],
+input[type="email"],
+input[type="address"],
+input[type="iban"],
+p-calendar .p-inputtext {
+  outline: none; /* Remove default focus outline */
+  border: 1px solid #007bff; /* Consistent border for focus */
+}
+
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched {
+  border-color: #ff5b57; /* Error color */
+}
+
+/* Make sure labels don't affect the input layout */
+.p-error {
+  display: block;
+  margin: 0;
+  height: 1em; /* Reserve space for error message */
+  line-height: 1em;
+  color: #ff5b57; /* Error color */
+}

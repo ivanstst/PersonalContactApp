@@ -1,0 +1,43 @@
+<h1 style="text-align: center;
+
+">Personal contanct</h1>
+<p></p>
+<div class="parent">
+<form style="align-items: center;" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="firstName">First Name</label>
+      <input type="text" pInputText id="firstName" formControlName="firstName" />
+      <small class="p-error block" *ngIf="
+      contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.dirty
+    ">
+    First name is required</small>
+    </div>
+    <div class="p-field">
+      <label for="surName">SurName</label>
+      <input type="text" pInputText id="surName" formControlName="surName" />
+    </div>
+    <div class="p-field">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="text" pInputText id="phoneNumber" formControlName="phoneNumber" />
+      <small class="p-error block" *ngIf="
+      contactForm.get('phoneNumber')?.invalid && contactForm.get('phoneNumber')?.dirty
+    ">Valid telephone number is required</small>
+    </div>
+    <div class="p-field">
+      <label for="address">Address</label>
+      <input type="address" pInputText id="address" formControlName="address" />
+    </div>
+    <div class="p-field">
+      <label for="dateOfBirth">Birthday</label>
+      <p-calendar id="dateOfBirth" inputId="dateOfBirth" formControlName="dateOfBirth" ></p-calendar>
+    </div>
+    <div class="p-field">
+      <label for="iban">IBAN</label>
+      <input type="iban" pInputText id="iban" formControlName="iban" />
+    </div>
+    <button type="submit" pButton label="Save" [disabled]="!contactForm.valid"></button>
+  </div>
+</form>
+<p-toast></p-toast>
+</div>

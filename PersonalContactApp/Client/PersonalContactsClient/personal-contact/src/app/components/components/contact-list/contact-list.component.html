@@ -1,0 +1,32 @@
+<h2 class="header-container">Contact List</h2>
+<p-table [value]="contacts$ | async" [paginator]="true" [rows]="10" responsiveLayout="scroll">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>First Name</th>
+      <th>SurName</th>
+      <th>PhoneNumber</th>
+      <th>DateOfBirth</th>
+      <th>Address</th>
+      <th>Iban</th>
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-contact>
+    <tr>
+      <td>{{ contact.firstName }}</td>
+      <td>{{ contact.surName }}</td>
+      <td>{{ contact.phoneNumber }}</td>
+      <td>{{ contact.dateOfBirth }}</td>
+      <td>{{ contact.address }}</td>
+      <td>{{ contact.iban }}</td>
+      <td>
+        <button pButton type="button" icon="pi pi-pencil" (click)="editContact(contact.id)" class="p-button-rounded p-button-success p-mr-2"></button>
+        <button pButton type="button" icon="pi pi-trash" (click)="deleteContact(contact)" class="p-button-rounded p-button-warning"></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+<p-confirmDialog></p-confirmDialog><p-toast></p-toast>
+<div class="add-button-container">
+<button id="addNewButton" pButton type="button" icon="pi pi-plus" label="Add New" routerLink="/contact-detail/new"></button>
+</div>
